@@ -1,0 +1,84 @@
+.app-is-mobile .app-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+h1.app-name {
+  margin: auto;
+  margin-left: 0px;
+}
+.sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+.app-is-mobile .sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  // flex: 1 0 auto;
+  display: inherit;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.menu-pane-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.sidenav-branding {
+  border-bottom: 1px solid var(--qq-sidenav-border-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 12px;
+}
+.sidenav-menu {
+  flex: 1; /* or flex-grow: 1  */;
+  overflow-x: hidden;
+}
+.sidenav-menu .title {
+  text-align: center;
+  padding: 0.5em 0.1em 0em 0.1em;
+  font-weight: bolder;
+  font-size: 1.1em;
+}
+.sidenav-version {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border-top: 1px solid var(--qq-sidenav-border-color);
+  font-size: smaller;
+}
+.sidenav-version a {
+  color: var(--vendor-foreground-color) !important;
+}
+.branding {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* Branding image */
+.branding-logo img {
+  width: 32px;
+  height: 32px;
+}
+/* Branding name */
+.branding-text {
+  overflow: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.1em;
+  font-weight: bolder;
+  margin: 0;
+  margin: 0px 4px;
+}
+.sidenav-content {
+  padding: 12px;
+  height: calc(100% - 56px);
+  overflow: auto;
+}
