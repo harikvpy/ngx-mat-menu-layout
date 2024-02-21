@@ -99,6 +99,39 @@
           }
         }
       }
+    },
+    "@smallpearl/ngx-mat-menu-layout": {
+      "projectType": "library",
+      "root": "projects/smallpearl/ngx-mat-menu-layout",
+      "sourceRoot": "projects/smallpearl/ngx-mat-menu-layout/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/smallpearl/ngx-mat-menu-layout/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/smallpearl/ngx-mat-menu-layout/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/smallpearl/ngx-mat-menu-layout/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/smallpearl/ngx-mat-menu-layout/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
