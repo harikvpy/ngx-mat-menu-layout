@@ -2,10 +2,10 @@
   "name": "@smallpearl/ngx-mat-menu-layout",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/cdk": "^15.2.0",
-    "@angular/common": "^15.2.0",
-    "@angular/core": "^15.2.0",
-    "@angular/material": "^15.2.0"
+    "@angular/cdk": "^15.0.0 || ^16.0.0 || ^17.0.0",
+    "@angular/common": "^15.0.0 || ^16.0.0 || ^17.0.0",
+    "@angular/core": "^15.0.0 || ^16.0.0 || ^17.0.0",
+    "@angular/material": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
