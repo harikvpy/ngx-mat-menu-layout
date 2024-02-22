@@ -17,7 +17,7 @@ import {
 } from './mat-menu-pane/layout.service';
 
 @Component({
-  selector: 'qq-mat-side-menu-layout',
+  selector: 'ngx-mat-menu-layout',
   template: `
     <mat-sidenav-container class="layout-container">
       <mat-sidenav
