@@ -7,7 +7,7 @@ import { NavItem } from '@smallpearl/ngx-mat-menu-layout';
     <ngx-mat-menu-layout
       brandingImage="assets/angular.png"
       brandingText="SMALLPEARL"
-      appTitle="QQBOOKS"
+      appTitle="SUPERCMS"
       contentContainerClass="ex-content-container"
       [menuItems]="menuItems"
       [menuPaneFooterContent]="versionInfoFooter"

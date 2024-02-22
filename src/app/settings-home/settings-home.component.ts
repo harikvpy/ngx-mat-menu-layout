@@ -10,7 +10,7 @@ import { NgxMatMenuLayoutComponent } from '@smallpearl/ngx-mat-menu-layout';
       [showBackButton]="true"
       brandingImage="assets/angular.png"
       brandingText="SMALLPEARL"
-      appTitle="QQBOOKS"
+      appTitle="SUPERCMS"
       menuTitle="SETTINGS"
       [menuItems]="menuItems"
       [menuPaneFooterContent]="versionInfoFooter"
