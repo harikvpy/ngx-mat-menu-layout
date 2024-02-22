@@ -114,16 +114,16 @@ $my-theme: mat.define-light-theme((
   --sidemenu-background: #{map-get($my-primary, 500)};
   --sidemenu-foreground: #{map-get($my-primary, '500-contrast')};
   --sidemenu-border-color: #{map-get($my-primary, '800-contrast')};
-  --qq-sidenav-border-color: var(--sidemenu-border-color);
-  --qq-toolbar-border-color: var(--sidemenu-border-color);
-  --qq-sidenav-fg-color: var(--sidemenu-foreground);
-  --qq-sidenav-bg-color: var(--sidemenu-background);
-  --qq-toolbar-fg-color: var(--sidemenu-foreground);
-  --qq-toolbar-bg-color: var(--sidemenu-background);
-  --qq-menu-item-fg-color: var(--sidemenu-foreground);
-  --qq-menu-item-bg-color: var(--sidemenu-background);
-  --qq-highlighted-menu-item-fg-color: var(--sidemenu-background);
-  --qq-highlighted-menu-item-bg-color: var(--sidemenu-foreground);
+  --sp-ngx-mat-menu-border-color: var(--sidemenu-border-color);
+  --sp-ngx-mat-menu-toolbar-border-color: var(--sidemenu-border-color);
+  --sp-ngx-mat-menu-fg-color: var(--sidemenu-foreground);
+  --sp-ngx-mat-menu-bg-color: var(--sidemenu-background);
+  --sp-ngx-mat-menu-toolbar-fg-color: var(--sidemenu-foreground);
+  --sp-ngx-mat-menu-toolbar-bg-color: var(--sidemenu-background);
+  --sp-ngx-mat-menu-menu-item-fg-color: var(--sidemenu-foreground);
+  --sp-ngx-mat-menu-menu-item-bg-color: var(--sidemenu-background);
+  --sp-ngx-mat-menu-highlighted-menu-item-fg-color: var(--sidemenu-background);
+  --sp-ngx-mat-menu-highlighted-menu-item-bg-color: var(--sidemenu-foreground);
 }
 
 .ex-content-container {

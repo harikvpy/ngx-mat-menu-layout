@@ -87,12 +87,12 @@ import {
   styles: [
     `
       .menu-pane {
-        background-color: var(--qq-sidenav-bg-color) !important;
-        color: var(--qq-sidenav-fg-color) !important;
+        background-color: var(--sp-ngx-mat-menu-bg-color) !important;
+        color: var(--sp-ngx-mat-menu-fg-color) !important;
       }
       mat-toolbar {
-        background-color: var(--qq-toolbar-bg-color);
-        color: var(--qq-toolbar-fg-color);
+        background-color: var(--sp-ngx-mat-menu-toolbar-bg-color);
+        color: var(--sp-ngx-mat-menu-toolbar-fg-color);
       }
       mat-toolbar {
         padding: 0 0;
@@ -122,7 +122,7 @@ import {
         min-width: 192px;
       }
       .app-toolbar {
-        border-bottom: 1px solid var(--qq-toolbar-border-color);
+        border-bottom: 1px solid var(--sp-ngx-mat-menu-toolbar-border-color);
       }
       .spacer {
         flex: 1 1 auto;

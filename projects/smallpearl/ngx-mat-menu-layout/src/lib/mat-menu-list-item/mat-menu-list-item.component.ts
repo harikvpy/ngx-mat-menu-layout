@@ -100,16 +100,20 @@ import { NavItem } from './nav-item';
         margin-right: 8px !important;
       }
       .menu-item-color {
-        background-color: var(--qq-menu-item-bg-color) !important;
-        color: var(--qq-menu-item-fg-color) !important;
+        background-color: var(--sp-ngx-mat-menu-menu-item-bg-color) !important;
+        color: var(--sp-ngx-mat-menu-menu-item-fg-color) !important;
       }
       .highlighted {
-        background-color: var(--qq-highlighted-menu-item-bg-color) !important;
-        color: var(--qq-highlighted-menu-item-fg-color) !important;
+        background-color: var(
+          --sp-ngx-mat-menu-highlighted-menu-item-bg-color
+        ) !important;
+        color: var(--sp-ngx-mat-menu-highlighted-menu-item-fg-color) !important;
       }
       .highlighted .menu-item-color {
-        background-color: var(--qq-highlighted-menu-item-bg-color) !important;
-        color: var(--qq-highlighted-menu-item-fg-color) !important;
+        background-color: var(
+          --sp-ngx-mat-menu-highlighted-menu-item-bg-color
+        ) !important;
+        color: var(--sp-ngx-mat-menu-highlighted-menu-item-fg-color) !important;
       }
       .mdc-list-item {
         padding-right: 0px;
