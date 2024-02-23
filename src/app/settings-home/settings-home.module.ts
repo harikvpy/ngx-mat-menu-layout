@@ -9,12 +9,12 @@ import { SidemenuFooterComponent } from '../components/sidemenu-footer/sidemenu-
 import { SidemenuInfoPaneComponent } from '../components/sidemenu-info-pane/sidemenu-info-pane.component';
 import { ToolbarEndButtonsComponent } from '../components/toolbar-end-buttons/toolbar-end-buttons.component';
 import { ToolbarTitleComponent } from '../components/toolbar-title/toolbar-title.component';
-import { SatelliteAppHomeComponent } from './settings-home.component';
+import { SettingsHomeComponent } from './settings-home.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SatelliteAppHomeComponent,
+    component: SettingsHomeComponent,
     children: [
       {
         path: 'general',
@@ -36,7 +36,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SatelliteAppHomeComponent],
+  declarations: [SettingsHomeComponent],
   imports: [
     CommonModule,
     MatButtonModule,

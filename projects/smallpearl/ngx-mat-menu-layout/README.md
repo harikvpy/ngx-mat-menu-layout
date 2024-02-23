@@ -72,6 +72,7 @@ See the sample application for implementation.
 |------|------|-------|
 | showBackButton | boolean | A boolean property that controls if a Back button should be displayed at the top of the side menu. This is useful for secondary menus (note that this is NOT a submenu) from where a navigation path to the parent menu ought to be provided. |
 | defaultBackButtonHref | string | The href for the back button is typically automatically determined. If there's no back history, the back button (if specified) will use this href. |
+| backButtonText | string | The back button text. Defaults to 'BACK' |
 | brandingImage | string | Branding logo (32x32) that will be displayed on the top of the menu pane. |
 | brandingText | string | Branding text that is displayed next to the logo on the top of the menu pane. |
 | menuItems | NavItem[] | Menu items which is an array of `NavItem` objects. |

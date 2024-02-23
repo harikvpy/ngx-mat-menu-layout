@@ -33,6 +33,7 @@ import {
           <ngx-mat-menu-pane
             [showBackButton]="showBackButton"
             [defaultBackButtonHref]="defaultBackButtonHref"
+            [backButtonText]="backButtonText"
             [brandingImage]="brandingImage"
             [brandingText]="brandingText"
             [menuItems]="menuItems"
@@ -139,6 +140,7 @@ export class NgxMatMenuLayoutComponent implements OnInit, OnDestroy {
   topBottomPadding: number = 6;
   @Input() showBackButton: boolean = false;
   @Input() defaultBackButtonHref: string = '';
+  @Input() backButtonText: string = 'BACK';
   @Input() brandingImage: string = '';
   @Input() brandingText: string = '';
   @Input() appTitle: string = '';

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavItem } from '@smallpearl/ngx-mat-menu-layout';
 import { NgxMatMenuLayoutComponent } from '@smallpearl/ngx-mat-menu-layout';
 
@@ -8,6 +8,7 @@ import { NgxMatMenuLayoutComponent } from '@smallpearl/ngx-mat-menu-layout';
     <ngx-mat-menu-layout
       contentContainerClass="ex-content-container"
       [showBackButton]="true"
+      [backButtonText]="backButtonText"
       brandingImage="assets/angular.png"
       brandingText="SMALLPEARL"
       appTitle="SUPERCMS"
@@ -38,7 +39,8 @@ import { NgxMatMenuLayoutComponent } from '@smallpearl/ngx-mat-menu-layout';
   `,
   styles: [],
 })
-export class SatelliteAppHomeComponent {
+export class SettingsHomeComponent implements OnInit {
+  backButtonText = 'Previous';
   menuItems: NavItem[] = [
     {
       route: 'general',
@@ -55,6 +57,13 @@ export class SatelliteAppHomeComponent {
   sideMenuLayout!: NgxMatMenuLayoutComponent;
 
   constructor() {}
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      console.log(`Changing backButtonText..`);
+      this.backButtonText = 'Back';
+    }, 5000);
+  }
   onNotificationsToggle() {
     if (this.sideMenuLayout) {
       this.sideMenuLayout.infoPane.toggle();

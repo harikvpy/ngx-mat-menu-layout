@@ -1,20 +1,17 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   Input,
+  OnChanges,
   OnDestroy,
   OnInit,
+  SimpleChanges,
   TemplateRef,
 } from '@angular/core';
-import { MatBadgeModule } from '@angular/material/badge';
-import { MatListModule } from '@angular/material/list';
-import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenav } from '@angular/material/sidenav';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subject, filter, takeUntil, tap } from 'rxjs';
-import { NgxMatMenuListItemModule } from '../mat-menu-list-item/mat-menu-list-item.module';
 import { NavItem } from '../mat-menu-list-item/nav-item';
 import { LayoutService, SideMenuLayoutProps } from './layout.service';
 
@@ -51,10 +48,11 @@ import { LayoutService, SideMenuLayoutProps } from './layout.service';
   styleUrls: ['./mat-menu-pane.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NgxMatMenuPaneComponent implements OnInit, OnDestroy {
+export class NgxMatMenuPaneComponent implements OnInit, OnDestroy, OnChanges {
   @Input() menuTitle: string = '';
   @Input() showBackButton: boolean = false;
   @Input() defaultBackButtonHref: string = '';
+  @Input() backButtonText: string = 'BACK';
   @Input() menuItems: NavItem[] = [];
   @Input() brandingText: string = 'BRAND';
   @Input() brandingImage: string = '';
@@ -92,7 +90,7 @@ export class NgxMatMenuPaneComponent implements OnInit, OnDestroy {
         route: this.layoutService.previousUrl
           ? this.layoutService.previousUrl
           : this.defaultBackButtonHref,
-        text: 'BACK',
+        text: this.backButtonText,
         icon: 'arrow_back',
         backButton: true,
         backHref: window.history.state['backHref'],
@@ -115,5 +113,17 @@ export class NgxMatMenuPaneComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.destroy.next();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['backButtonText']) {
+      if (this.backButtonNavItem) {
+        this.backButtonNavItem = {
+          ...this.backButtonNavItem,
+          text: this.backButtonText,
+        };
+        this.cdr.detectChanges();
+      }
+    }
   }
 }
