@@ -87,6 +87,9 @@ import {
   `,
   styles: [
     `
+      .app-toolbar {
+        position: fixed;
+      }
       .menu-pane {
         background-color: var(--sp-ngx-mat-menu-bg-color) !important;
         color: var(--sp-ngx-mat-menu-fg-color) !important;
@@ -112,10 +115,10 @@ import {
         overflow-x: scroll;
         overflow-y: scroll;
       }
-      .content-container {
-        overflow-x: scroll;
-        overflow-y: scroll;
-      }
+      // .content-container {
+      //   overflow-x: scroll;
+      //   overflow-y: scroll;
+      // }
       .h-100 {
         height: 100%;
       }
