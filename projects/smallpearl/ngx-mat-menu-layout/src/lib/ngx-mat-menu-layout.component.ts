@@ -115,10 +115,6 @@ import {
         overflow-x: scroll;
         overflow-y: scroll;
       }
-      // .content-container {
-      //   overflow-x: scroll;
-      //   overflow-y: scroll;
-      // }
       .h-100 {
         height: 100%;
       }
@@ -133,6 +129,13 @@ import {
       }
     `,
   ],
+      // Add this style to make the content-container scroll from within.
+      // That is override the window scrolling with the content div private
+      // scroller.
+      // .content-container {
+      //   overflow-x: scroll;
+      //   overflow-y: scroll;
+      // }
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxMatMenuLayoutComponent implements OnInit, OnDestroy {
