@@ -75,7 +75,7 @@ import {
           <ng-container *ngTemplateOutlet="toolbarEndContent"></ng-container>
         </mat-toolbar>
         <div
-          [class]="'mat-body content-container ' + contentContainerClass"
+          [class]="'mat-body ' + contentContainerClass"
           [ngStyle]="{
             'height.px': containerHeight,
           }"
@@ -129,13 +129,13 @@ import {
       }
     `,
   ],
-      // Add this style to make the content-container scroll from within.
-      // That is override the window scrolling with the content div private
-      // scroller.
-      // .content-container {
-      //   overflow-x: scroll;
-      //   overflow-y: scroll;
-      // }
+  // Add this style to make the content-container scroll from within.
+  // That is override the window scrolling with the content div private
+  // scroller.
+  // .content-container {
+  //   overflow-x: scroll;
+  //   overflow-y: scroll;
+  // }
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxMatMenuLayoutComponent implements OnInit, OnDestroy {
