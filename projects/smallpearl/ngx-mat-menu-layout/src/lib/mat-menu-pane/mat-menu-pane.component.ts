@@ -37,6 +37,7 @@ import { LayoutService, SideMenuLayoutProps } from './layout.service';
           <ngx-mat-menu-list-item
             *ngFor="let item of menuItems"
             [item]="item"
+            [showIcon]="showIcons"
           ></ngx-mat-menu-list-item>
         </mat-nav-list>
       </div>
@@ -59,6 +60,7 @@ export class NgxMatMenuPaneComponent implements OnInit, OnDestroy, OnChanges {
   @Input() matSideNav: MatSidenav | undefined;
   @Input() appVersion: string = '0.0';
   @Input() menuPaneFooterContent!: TemplateRef<any>;
+  @Input() showIcons: boolean = true;
   layout!: SideMenuLayoutProps;
 
   backButtonNavItem: NavItem | undefined;

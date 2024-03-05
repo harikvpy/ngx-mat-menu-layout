@@ -44,13 +44,13 @@ import { NavItem } from './nav-item';
       (click)="onItemSelected($event, item)"
     >
       <mat-icon
-        *ngIf="!item.iconType || item.iconType == 'mat'"
+        *ngIf="(showIcon && !item.iconType) || item.iconType == 'mat'"
         class="menu-item-color"
         matListItemIcon
         >{{ item.icon }}</mat-icon
       >
       <i
-        *ngIf="item.iconType != 'mat'"
+        *ngIf="showIcon && item.iconType != 'mat'"
         [class]="'menu-item-color ' + item.icon"
       ></i>
       <span class="menu-item-color text-uppercase">{{ item.text }}</span>
@@ -150,6 +150,8 @@ export class NgxMatMenuListItemComponent
   // The parent of this menu item. Set only for child items. Will be undefined
   // for top level menu items
   @Input() parent!: NgxMatMenuListItemComponent;
+
+  @Input() showIcon: boolean = true;
 
   // All child MenuListItemComponents so that we can check each one if
   // the current url ends with the child component's NavItem.route.
