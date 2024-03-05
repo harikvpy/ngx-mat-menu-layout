@@ -166,8 +166,10 @@ export class NgxMatMenuListItemComponent
       tap((event: RouterEvent) => {
         const ne = event as NavigationEnd;
         const url = ne.urlAfterRedirects;
+        const lastSlash = url.lastIndexOf('/');
+        const lastUrlSegment = url.substring(lastSlash + 1);
         if (this.item?.route) {
-          if (url.endsWith(this.item.route)) {
+          if (lastUrlSegment === this.item.route) {
             this.highlighted = true;
             if (this.parent) {
               this.parent.expand();
@@ -230,11 +232,13 @@ export class NgxMatMenuListItemComponent
    */
   curUrlEndsWithChildItemRoute(): boolean {
     const curUrl = this.router.routerState.snapshot.url;
+    const lastSlash = curUrl.lastIndexOf('/');
+    const lastUrlSegment = curUrl.substring(lastSlash + 1);
     if (this.children && this.children.length) {
       if (
         this.children.find(
           (component) =>
-            !!(component.item?.route && curUrl.endsWith(component.item.route))
+            !!(component.item?.route && lastUrlSegment === component.item.route)
         ) !== undefined
       ) {
         return true;
@@ -251,9 +255,11 @@ export class NgxMatMenuListItemComponent
    */
   curUrlEndsWithSelfOrChildItemRoute(): boolean {
     const curUrl = this.router.routerState.snapshot.url;
+    const lastSlash = curUrl.lastIndexOf('/');
+    const lastUrlSegment = curUrl.substring(lastSlash + 1);
     return (
       this.curUrlEndsWithChildItemRoute() ||
-      !!(this.item.route && curUrl.endsWith(this.item.route))
+      !!(this.item.route && lastUrlSegment === this.item.route) //  curUrl.endsWith(this.item.route)
     );
   }
 
