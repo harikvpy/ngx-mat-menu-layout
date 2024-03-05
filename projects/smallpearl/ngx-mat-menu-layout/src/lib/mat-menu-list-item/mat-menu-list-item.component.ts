@@ -176,23 +176,18 @@ export class NgxMatMenuListItemComponent
         const url = ne.urlAfterRedirects;
         const lastSlash = url.lastIndexOf('/');
         const lastUrlSegment = url.substring(lastSlash + 1);
-        if (this.item?.route) {
-          if (lastUrlSegment === this.item.route) {
-            this.highlighted = true;
-            if (this.parent) {
-              this.parent.expand();
-            }
+        if (lastUrlSegment === this.item?.route) {
+          this.highlighted = true;
+          if (this.parent) {
+            this.parent.expand();
+          }
+          this.cdr.detectChanges();
+        } else {
+          if (this.highlighted) {
+            this.highlighted = false;
             this.cdr.detectChanges();
-          } else {
-            if (this.highlighted) {
-              this.highlighted = false;
-              // If the item has a parent and current url is not for a sibling
-              // item, collapse parent.
-              if (this.parent && !this.parent.curUrlEndsWithChildItemRoute()) {
-                this.parent.collapse();
-              }
-              this.cdr.detectChanges();
-            }
+          } else if (this.expanded && !this.curUrlADescendent()) {
+            this.collapse();
           }
         }
       })
@@ -230,6 +225,37 @@ export class NgxMatMenuListItemComponent
       }
       this.cdr.detectChanges();
     }
+  }
+
+  /**
+   * Tests if any of this NavItem's children's route matches the lastUrlSegment
+   * of the current url.
+   * @returns
+   */
+  curUrlADescendent(): boolean {
+    const curUrl = this.router.routerState.snapshot.url;
+    const lastSlash = curUrl.lastIndexOf('/');
+    const lastUrlSegment = curUrl.substring(lastSlash + 1);
+    if (this.item?.children) {
+      const traverseToLastChild = (item: NavItem): boolean => {
+        if (item?.children) {
+          // iterate all the children and check if the last url segment
+          // matches the corresponding NavItem.route.
+          for (let index = 0; index < item.children.length; index++) {
+            const childItem = item.children[index];
+            if (childItem?.children) {
+              return traverseToLastChild(childItem);
+            }
+            if (lastUrlSegment === childItem?.route) {
+              return true; // We don't have to check the rest of the items
+            }
+          }
+        }
+        return false;
+      };
+      return traverseToLastChild(this.item);
+    }
+    return false;
   }
 
   /**
