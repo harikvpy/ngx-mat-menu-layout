@@ -87,9 +87,6 @@ import {
   `,
   styles: [
     `
-      .app-toolbar {
-        position: fixed;
-      }
       .menu-pane {
         background-color: var(--sp-ngx-mat-menu-bg-color) !important;
         color: var(--sp-ngx-mat-menu-fg-color) !important;
