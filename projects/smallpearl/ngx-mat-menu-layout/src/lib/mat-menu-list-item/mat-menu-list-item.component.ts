@@ -32,27 +32,29 @@ import { NavItem } from './nav-item';
   template: `
     <a
       mat-list-item
-      [ngStyle]="{ 'padding-left': depth * 10 + 'px' }"
+      [ngStyle]="{ 'padding-left': depth * 8 + 'px' }"
       [disabled]="item.disabled"
       [attr.routerLink]="!item.children ? item.route : null"
-      class="menu-list-item"
+      class="menu-list-item pl-8"
       [ngClass]="{
         highlighted: this.highlighted,
-        'not-highlighted': !this.highlighted
+        'not-highlighted': !this.highlighted,
       }"
       routerLinkActive="is-active"
       (click)="onItemSelected($event, item)"
     >
-      <mat-icon
-        *ngIf="(showIcon && !item.iconType) || item.iconType == 'mat'"
-        class="menu-item-color"
-        matListItemIcon
-        >{{ item.icon }}</mat-icon
-      >
-      <i
-        *ngIf="showIcon && item.iconType != 'mat'"
-        [class]="'menu-item-color ' + item.icon"
-      ></i>
+      <ng-container *ngIf="item.icon && showIcon">
+        <mat-icon
+          *ngIf="!item.iconType || item.iconType == 'mat'"
+          class="menu-item-color"
+          matListItemIcon
+          >{{ item.icon }}</mat-icon
+        >
+        <i
+          *ngIf="item.iconType != 'mat'"
+          [class]="'menu-item-color ' + item.icon"
+        ></i>
+      </ng-container>
       <span class="menu-item-color text-uppercase">{{ item.text }}</span>
       <span class="twistie-separator"></span>
       <span *ngIf="item.children && item.children.length">
@@ -67,6 +69,7 @@ import { NavItem } from './nav-item';
     <div>
       <ngx-mat-menu-list-item
         class="menu-child"
+        [showIcon]="showIcon"
         [ngStyle]="{ display: expanded ? 'inherit' : 'none' }"
         *ngFor="let child of item.children"
         [item]="child"
@@ -79,6 +82,9 @@ import { NavItem } from './nav-item';
     `
       .menu-list-item {
         margin-right: 8px !important;
+      }
+      .pl-8 {
+        padding-left: 8px;
       }
       .twistie-separator {
         flex: 1 1 0%;
@@ -200,7 +206,7 @@ export class NgxMatMenuListItemComponent
     private cdr: ChangeDetectorRef
   ) {
     if (this.depth === undefined) {
-      this.depth = 0;
+      this.depth = 1;
     }
   }
 

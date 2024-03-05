@@ -10,6 +10,7 @@ import { NavItem } from '@smallpearl/ngx-mat-menu-layout';
       appTitle="SUPERCMS"
       contentContainerClass="ex-content-container"
       [menuItems]="menuItems"
+      [showIcons]="false"
       [menuPaneFooterContent]="versionInfoFooter"
       [toolbarEndContent]="toolbarEndContent"
       [infoPaneContent]="infoPaneContent"
