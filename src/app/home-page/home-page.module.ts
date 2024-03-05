@@ -37,10 +37,24 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'invitations',
+        path: 'invitations-allmembers',
         loadComponent: () =>
           import('../invitations/invitations.component').then(
             (m) => m.InvitationsComponent
+          ),
+      },
+      {
+        path: 'general-settings',
+        loadComponent: () =>
+          import('../general-settings/general-settings.component').then(
+            (c) => c.GeneralSettingsComponent
+          ),
+      },
+      {
+        path: 'roaming-settings',
+        loadComponent: () =>
+          import('../roaming-settings/roaming-settings.component').then(
+            (c) => c.RoamingSettingsComponent
           ),
       },
       {

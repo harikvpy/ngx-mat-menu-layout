@@ -56,16 +56,27 @@ export class HomePageComponent {
           icon: 'people_alt',
         },
         {
-          route: 'invitations',
+          route: 'invitations-allmembers',
           text: 'INVITATIONS',
           icon: 'email',
         },
       ],
     },
     {
-      route: './settings',
       text: 'SETTINGS',
       icon: 'settings',
+      children: [
+        {
+          route: 'general-settings',
+          text: 'GENERAL SETTINGS',
+          icon: 'people_alt',
+        },
+        {
+          route: 'roaming-settings',
+          text: 'ROAMING SETTINGS',
+          icon: 'email',
+        },
+      ],
     },
   ];
 }
