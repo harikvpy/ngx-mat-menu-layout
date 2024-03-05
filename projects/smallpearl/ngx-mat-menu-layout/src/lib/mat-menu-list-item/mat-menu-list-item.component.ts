@@ -43,18 +43,18 @@ import { NavItem } from './nav-item';
       routerLinkActive="is-active"
       (click)="onItemSelected($event, item)"
     >
-      <ng-container *ngIf="item.icon && showIcon">
-        <mat-icon
-          *ngIf="!item.iconType || item.iconType == 'mat'"
-          class="menu-item-color"
-          matListItemIcon
-          >{{ item.icon }}</mat-icon
-        >
-        <i
-          *ngIf="item.iconType != 'mat'"
-          [class]="'menu-item-color ' + item.icon"
-        ></i>
-      </ng-container>
+      <mat-icon
+        *ngIf="
+          (item.icon && showIcon && !item.iconType) || item.iconType == 'mat'
+        "
+        class="menu-item-color"
+        matListItemIcon
+        >{{ item.icon }}</mat-icon
+      >
+      <i
+        *ngIf="item.icon && showIcon && item.iconType != 'mat'"
+        [class]="'menu-item-color ' + item.icon"
+      ></i>
       <span class="menu-item-color text-uppercase">{{ item.text }}</span>
       <span class="twistie-separator"></span>
       <span *ngIf="item.children && item.children.length">
