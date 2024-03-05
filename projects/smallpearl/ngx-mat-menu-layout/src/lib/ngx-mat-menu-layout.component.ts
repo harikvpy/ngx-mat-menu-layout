@@ -22,16 +22,16 @@ import {
     <mat-sidenav-container class="layout-container">
       <mat-sidenav
         class="menu-pane"
-        mode="side"
         opened
         #menuNav
         [mode]="layout.smallScreen ? 'over' : 'side'"
         [opened]="!layout.smallScreen"
         [fixedInViewport]="layout.smallScreen"
       >
-        <div class="sidenav-container mw-192px">
+        <div class="sidenav-container">
           <ngx-mat-menu-pane
             [showBackButton]="showBackButton"
+            [showIcons]="showIcons"
             [defaultBackButtonHref]="defaultBackButtonHref"
             [backButtonText]="backButtonText"
             [brandingImage]="brandingImage"
@@ -107,16 +107,14 @@ import {
       }
       .sidenav-container {
         height: 100%;
-        max-width: 250px;
+        max-width: var(--sp-ngx-mat-menu-sidemenu-max-width, 50%);
+        min-width: var(--sp-ngx-mat-menu-sidemenu-min-width, 250px);
         text-wrap: nowrap;
         overflow-x: scroll;
         overflow-y: scroll;
       }
       .h-100 {
         height: 100%;
-      }
-      .mw-192px {
-        min-width: 192px;
       }
       .app-toolbar {
         border-bottom: 1px solid var(--sp-ngx-mat-menu-toolbar-border-color);
@@ -158,6 +156,7 @@ export class NgxMatMenuLayoutComponent implements OnInit, OnDestroy {
   @Input() infoPaneMinWidth: number = 250;
   @Input() infoPaneMaxWidth: number = 400;
   @Input() contentContainerClass: string = '';
+  @Input() showIcons: boolean = true;
   // Allows querying infoPane to activate it or to set its attributes
   @ViewChild('infoPane') readonly infoPane!: MatSidenav;
 
