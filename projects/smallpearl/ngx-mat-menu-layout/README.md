@@ -1,13 +1,14 @@
 # NgxMatMenuLayout
 
-An Angular package for implementing a side menu user interface with a toolbar.
-The package uses Angular Material 15 and is compatible with Angular versions
-15 and above.
+An Angular package for implementing a responsive side menu user interface with
+a toolbar. The package uses Angular Material 15+ and is compatible with
+Angular versions 15 and above.
 
 The layout is responsive and hides the side menu when run on small screens.
-Toolbar displays an app title at the start. Toolbar content, along with others,
-can be customized by content projection.
+Toolbar displays an app title at the start. Toolbar content can be customized
+by content projection.
 
+## How to use
 To use this component, initialize it with the branding logo & text, application
 title and menu items (`NavItem[]`).
 
@@ -61,12 +62,13 @@ title and menu items (`NavItem[]`).
 Define the menu items as an array of `NavItem` objects and set it as the value
 for the property `menuItems`.
 
-And voila, you will have a beautify side menu layout with a toolbar on top. The
-layout is responsive and on small screens will auto hide. You can display the
-navigation menu, by using the hamburger button at the start of the toolbar.
+And voila, you will have a beautiful side menu layout with a toolbar on top.
+The layout is responsive and on small screens will auto hide. You can display
+the navigation menu, by using the hamburger button at the start of the toolbar.
 
 See the sample application for implementation.
 
+## Reference
 ### Inputs
 | Name | Type | Description |
 |------|------|-------|
@@ -135,7 +137,7 @@ button is selected.
   }
 ```
 
-## NavItem
+### NavItem
 
 This is the interface that is used to define the side menu items and pass it
 as the value for the `menuItems` property. It is defined as:-
@@ -164,3 +166,7 @@ Members are described in the following table:
 | children | If this item is a container for child menu items, set this to an array of `NavItem` objects |
 | backButton | Used internally |
 | backHref | Used internally |
+
+## Dependencies
+* Angular 15+
+* Angular Material 15+
