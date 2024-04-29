@@ -1,6 +1,6 @@
 {
   "name": "@smallpearl/ngx-mat-menu-layout",
-  "version": "0.0.1",
+  "version": "15.0.0",
   "peerDependencies": {
     "@angular/cdk": "^15.0.0 || ^16.0.0 || ^17.0.0",
     "@angular/common": "^15.0.0 || ^16.0.0 || ^17.0.0",
