@@ -1,6 +1,7 @@
 {
   "name": "@smallpearl/ngx-mat-menu-layout",
   "version": "15.0.0",
+  "description": "An Angular package for implementing a responsive side menu user interface with a toolbar",
   "peerDependencies": {
     "@angular/cdk": "^15.0.0 || ^16.0.0 || ^17.0.0",
     "@angular/common": "^15.0.0 || ^16.0.0 || ^17.0.0",
@@ -10,5 +11,24 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "keywords": [
+    "angular",
+    "material",
+    "menu",
+    "layout",
+    "sidemenu"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/harikvpy/ngx-mat-menu-layout/issues"
+  },
+  "homepage": "https://github.com/harikvpy/ngx-mat-menu-layout#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harikvpy/ngx-mat-menu-layout/"
+  }
 }
