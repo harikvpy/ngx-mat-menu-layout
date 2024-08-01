@@ -30,7 +30,7 @@ import { NavItem } from './nav-item';
 @Component({
   selector: 'ngx-mat-menu-list-item',
   template: `
-    <a
+    <a *ngIf="item.children || item.route; else divider"
       mat-list-item
       [ngStyle]="{ 'padding-left': depth * 8 + 'px' }"
       [disabled]="item.disabled"
@@ -77,6 +77,9 @@ import { NavItem } from './nav-item';
         [depth]="depth + 1"
       ></ngx-mat-menu-list-item>
     </div>
+    <ng-template #divider>
+      <div class="menu-divider"></div>
+    </ng-template>
   `,
   styles: [
     `
@@ -123,6 +126,9 @@ import { NavItem } from './nav-item';
       }
       .mdc-list-item {
         padding-right: 0px;
+      }
+      .menu-divider {
+        height: 1em;
       }
     `,
   ],

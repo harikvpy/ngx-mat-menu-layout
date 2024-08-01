@@ -48,6 +48,9 @@ export class HomePageComponent {
       icon: 'edit_square',
     },
     {
+      text: '',
+    },
+    {
       text: 'MEMBERS',
       icon: 'people',
       children: [
